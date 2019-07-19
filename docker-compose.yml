@@ -1,0 +1,9 @@
+version: '2.1'
+services:
+  app:
+    build: .
+    container_name: babelfish
+    volumes:
+      - './app:/usr/src/app'
+    ports:
+      - '0.0.0.0:3000:3000'

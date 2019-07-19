@@ -12,7 +12,6 @@ import Tree from './tree';
 import messages from './messages';
 import logo from '../../images/logo.jpg';
 import 'react-sortable-tree/style.css';
-import 'megadraft/dist/css/megadraft.css';
 
 const Header = () => (
   <Row>
