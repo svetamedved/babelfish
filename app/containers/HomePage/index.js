@@ -6,77 +6,44 @@
 
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import { Col, Container, Row } from 'styled-bootstrap-grid';
+import MarkdownEditor from './markdown';
+import Tree from './tree';
 import messages from './messages';
-import { Component } from 'react';
 import logo from '../../images/logo.jpg';
+import 'react-sortable-tree/style.css';
+import 'megadraft/dist/css/megadraft.css';
 
-
-const App = () => (
-  <Grid.Provider
-    padding="20px"
-    breakpoints={{ sm: "-500", md: "501-750", lg: "+750" }}
-  >
-    <Grid.Bounds direction="vertical">
-      <Grid.Box sm={{ hidden: true }}>
-        This header hides on small screens
-      </Grid.Box>
-      <Grid.Box>Content</Grid.Box>
-      <Grid.Box lg={{ padding: "50px" }}>
-        This footer gains extra padding on large screens
-      </Grid.Box>
-    </Grid.Bounds>
-  </Grid.Provider>
+const Header = () => (
+  <Row>
+    <Col col xl="1" lg="2" md="3" sm="6">
+      <img
+        src={logo}
+        alt={messages.defaultMessage}
+        width="100%"
+        height="100%"
+      />
+    </Col>
+    <Col col xl="11" lg="2" md="3" sm="6">
+      <FormattedMessage {...messages.header} />
+    </Col>
+  </Row>
 );
 
-
-
-export class Header extends Component {
-  render () {
-    return (
-        <div className="logo">
-          <img src={logo} width="500" height="800" />
-        </div>
-    );
-  }
-}
-
-export class Sidebar extends Component {
-  render () {
-    return (
-      <div className="row">
-
-      </div>
-    )
-  }
-}
-
 export default function HomePage() {
-  const content=[
-      {
-          icon: 'icon-class-name',
-          label: 'Label of Item',
-          to: '#a-link',
-      },
-      {
-          icon: 'icon-class-name',
-          label: 'Second Item',
-          content: [
-              {
-                  icon: 'icon-class-name',
-                  label: 'Sub Menu of Second Item',
-                  to: '#another-link',
-              },
-          ],
-      },
-  ];
-
   return (
-    <h1>
-      <Header/>
-      <FormattedMessage {...messages.header} />
-    </h1>
+    <Container fluid>
+      <Row>
+        <Col col xl="3" lg="2" md="3" sm="6">
+          <Tree />
+        </Col>
+        <Col col xl="9" lg="2" md="3" sm="6">
+          <Header />
+          <Row>
+            <MarkdownEditor />
+          </Row>
+        </Col>
+      </Row>
+    </Container>
   );
 }
-
-//ReactDOM.render(<MetisMenu />, document.getElementById('dom_id'));
-
