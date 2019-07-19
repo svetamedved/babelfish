@@ -32,6 +32,32 @@ import configureStore from './configureStore';
 
 // Import i18n messages
 import { translationMessages } from './i18n';
+import { BaseCSS } from 'styled-bootstrap-grid';
+import { Container, Row, Col } from 'styled-bootstrap-grid';
+
+const customCSS = `
+  body {
+    color: red;
+  }
+`;
+
+export default (props) =>
+  <sidebar>
+    <Container>
+      <Row>
+        <Col col xl="1" lg="2" md="3" sm="6">
+            Hello Bootstrap Layout
+        </Col>
+      </Row>
+    </Container>
+    <Container fluid>
+      <Row>
+        <Col col={6} sm={5} md={4} mdOffset={4}>
+            Hello Bootstrap Fluid Layout
+        </Col>
+      </Row>
+    </Container>
+  </sidebar>;
 
 // Create redux store with history
 const initialState = {};
