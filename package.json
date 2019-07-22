@@ -69,7 +69,7 @@
     "compression": "1.7.4",
     "connected-react-router": "6.4.0",
     "cross-env": "5.2.0",
-    "draft-js": "^0.11.0",
+    "draft-js": "^0.10.5",
     "express": "4.16.4",
     "fontfaceobserver": "2.1.0",
     "history": "4.9.0",
@@ -81,15 +81,16 @@
     "lodash": "^4.17.15",
     "megadraft": "^0.6.5",
     "minimist": "1.2.0",
-    "prop-types": "15.7.2",
+    "next": "^9.0.2",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
-    "react-dom": "16.8.6",
+    "react-dom": "^16.8.6",
     "react-draft-wysiwyg": "^1.13.2",
     "react-helmet": "6.0.0-beta",
     "react-intl": "2.8.0",
     "react-markdown": "^4.1.0",
     "react-metismenu": "^1.4.0",
-    "react-redux": "7.0.2",
+    "react-redux": "^6.0.1",
     "react-router-dom": "5.0.0",
     "react-sidebar": "^3.0.2",
     "react-sortable-tree": "^2.6.2",
@@ -172,5 +173,10 @@
     "webpack-hot-middleware": "2.24.3",
     "webpack-pwa-manifest": "4.0.0",
     "whatwg-fetch": "3.0.0"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   }
 }
